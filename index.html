@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Project</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"
+        defer></script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="app.js" defer></script>
+
+
+</head>
+
+<body>
+    <div id="page-header">
+        <h2>TrackMyCoin</h2>
+
+
+        <img id="bitcoin" src="img/bitcoin.png">
+    </div>
+    <div id="container" class="p-3">
+        <!-- Tabs -->
+        <ul class="nav nav-tabs" id="mainTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="coins-tab" data-bs-toggle="tab" data-bs-target="#coins"
+                    type="button" role="tab" aria-controls="coins" aria-selected="true">Coins</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="graph-tab" data-bs-toggle="tab" data-bs-target="#graph" type="button"
+                    role="tab" aria-controls="graph" aria-selected="false">Graph</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="about-tab" data-bs-toggle="tab" data-bs-target="#about" type="button"
+                    role="tab" aria-controls="about" aria-selected="false">About</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+
+            <!-- Coins -->
+            <div class="tab-pane fade show active" id="coins" role="tabpanel" aria-labelledby="coins-tab" tabindex="0">
+                <form id="search">
+                    <input id="coin-search" placeholder="Search for symbol or an id...">
+
+                </form>
+                <div class="row mt-3" id="coins-list"></div>
+            </div>
+
+
+
+            <div class="tab-pane fade" id="graph" role="tabpanel" aria-labelledby="graph-tab" tabindex="0">
+                <div id="wrapper">
+                    <h3>Coin Prices</h3>
+                    <canvas id="priceChart"></canvas>
+                </div>
+
+            </div>
+
+
+            <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
+                <img src="/img/WhatsApp Image 2025-07-22 at 07.37.23.jpeg">
+                <p>Hello!
+                    My name is yarden, and this is a fullstack project that tracks prices of coins.
+                    in this project i learned:<br>
+                    1. Managing State in JS is a living nightmare.<br>
+                    2. Coding takes so much time, you have to love it and be patient.<br>
+                    3. The eiffel tower expands by 15cm every summer due to the heat expanding the structure.<br>
+                    Please note that the API is updated every 30-50 seconds.
+                    <br>
+                    Enjoy This Project!
+                </p>
+            </div>
+
+
+            <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Too many coins, Please select one to replace
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="modal-choice">
+
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="loading" class="loading-overlay">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
