@@ -186,7 +186,7 @@
     });
 
     try {
-        document.getElementById('loading').style.display = 'flex';
+        document.getElementById('loading').style.display = 'flex'; // show a lodaing bar
         const { data } = await fetchCoinsData();
         const allCoins = data
         const html = generateCoinsHTML(data);
@@ -235,7 +235,7 @@
             scales: {
                 y: {
                     title: { display: true, text: '% change from start' },
-                    ticks: { callback: v => `${(+v).toFixed(2)}%` }
+                    ticks: { callback: v => `${(+v).toFixed(2)}%` } // chart code, no alt for callback
                 }
             }
         }
